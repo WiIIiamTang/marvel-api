@@ -65,7 +65,10 @@ URI=<MONGODB-URI>
 
 ### With Docker
 ``docker build . marvel-api-dev``
+
+
 The ``.env`` should be in the root folder already (or if not, the URI/username/password should already be in the ``mongoc.js`` file).
+
 
 ``docker run 3000:3000 -d marvel-api-dev``
 
