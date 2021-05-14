@@ -1,10 +1,10 @@
-import express from 'express';
-import { getItems, getItem } from '../controllers/items.js';
+const express = require('express');
+const items = require('../controllers/items');
 
-export const router = express.Router();
+const router = express.Router();
 
-router.get('/items', getItems);
+router.get('/items', items.getItems);
 
-router.get('/items/:id', getItem);
+router.get('/items/:id', items.getItem);
 
-export default router;
+module.exports = router;

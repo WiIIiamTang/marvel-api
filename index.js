@@ -1,44 +1,33 @@
-import express from 'express';
-import path from 'path';
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
-import categoryRoute from './routes/categories.js';
-import itemRoute from './routes/items.js';
-import doubleRoute from './routes/double.js';
-import mongodb from 'mongodb';
-import dotenv from 'dotenv';
-
-dotenv.config();
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
+const express = require('express');
+const path = require('path');
 const api = express();
 const port = process.env.PORT || 3000;
+var mongo = require('./util/mongoc');
 
-api.use(express.json());
-api.use('/api', categoryRoute);
-api.use('/api', itemRoute);
-api.use('/api', doubleRoute);
-api.use('/static', express.static(path.join(__dirname + '/public')));
+/////////////////////////////////////////////////////////////////////////
 
-const { MongoClient } = mongodb;
-const uri = process.env.URI;
-
-const client = new MongoClient(uri, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
+mongo.connector((err, client) => {
+    if (err) {
+        console.log(err);
     }
-);
 
-await client.connect();
-console.log('Connected to mongodb');
+    const categoryRoute = require('./routes/categories.js');
+    const itemRoute = require('./routes/items.js');
+    const doubleRoute = require('./routes/double.js');
 
-api.listen(port, () => {
-    // local test
-    console.log(`Listening on http://localhost:${port}`);
+    api.use(express.json());
+    api.use('/api', categoryRoute);
+    api.use('/api', itemRoute);
+    api.use('/api', doubleRoute);
+    api.use('/static', express.static(path.join(__dirname + '/public')));
+
+    api.listen(port, () => {
+        console.log(`Listening on http://localhost:${port}`);    
+    });
 });
 
-export default client;
+
+
 
 
 

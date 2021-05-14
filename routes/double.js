@@ -1,8 +1,8 @@
-import express from 'express';
-import { getDouble } from '../controllers/double.js';
+const express = require('express');
+const double = require('../controllers/double');
 
 const router = express.Router();
 
-router.get('/double', getDouble);
+router.get('/double', double.getDouble);
 
-export default router;
+module.exports = router;

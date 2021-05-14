@@ -1,11 +1,11 @@
-import client from '../index.js';
+var mongo = require('../util/mongoc');
 
-export const getDouble = async (req, res) => {
+exports.getDouble = async (req, res) => {
     try {
         var result = [];
-        const db = client.db('marvelSim');
+        var db = mongo.getdb();
         const categories = db.collection('double');
-        const cursor = categories.find({}, {});
+        const cursor = categories.find({}, {projection: {_id:0}});
         if ((await cursor.count())!=0) {
             await cursor.forEach(element => {
                 result.push(element);
