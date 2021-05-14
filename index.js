@@ -11,13 +11,14 @@ mongo.connector((err, client) => {
         console.log(err);
     }
 
+    /**
+     * Modules that use the db MUST be declared here, otherwise it may be undefined
+     */
     const categoryRoute = require('./routes/categories.js');
     const itemRoute = require('./routes/items.js');
     const doubleRoute = require('./routes/double.js');
 
-    /**
-     * Modules that use the db MUST be declared here, otherwise it may be undefined
-     */
+    
     api.use(express.json());
     api.use('/api', categoryRoute);
     api.use('/api', itemRoute);
