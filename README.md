@@ -65,3 +65,6 @@ URI=<MONGODB-URI>
 
 # Deployment
 This project is hosted on [vercel](https://vercel.com/home).
+
+# Data
+All images are property of Nexon. See [marvel machine sim](https://github.com/Aearsears/marvel_machine_sim).
