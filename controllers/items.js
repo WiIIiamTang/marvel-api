@@ -1,11 +1,11 @@
-import client from '../index.js';
+var mongo = require('../util/mongoc');
 
-export const getItems = async (req, res) => {
+exports.getItems = async (req, res) => {
     try {
+        var db = mongo.getdb();
         var result = [];
-        const db = client.db('marvelSim');
         const categories = db.collection('items');
-        const cursor = categories.find({}, {});
+        const cursor = categories.find({}, {projection: {_id:0}});
         if ((await cursor.count())!=0) {
             await cursor.forEach(element => {
                 result.push(element);
@@ -17,16 +17,16 @@ export const getItems = async (req, res) => {
     }
 }
 
-export const getItem = async (req, res) => {
+exports.getItem = async (req, res) => {
     const { id } = req.params;
     try {
         var result = [];
-        const db = client.db('marvelSim');
+        var db = mongo.getdb();
         const categories = db.collection('items');
         const cursor = categories.find({
             item_id : parseInt(id)
         }, {
-            projection: 0
+            projection: {_id:0}
         });
         if ((await cursor.count())!=0) {
             await cursor.forEach(element => {
