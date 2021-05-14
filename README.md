@@ -52,7 +52,7 @@ Gives information on the rates for double marvel on each wheel.
 If an item has a path of ``"static/img/2021/Anniversary-Royal-Hair-Coupon.png"``, for example, the image file can be accessed at ``https://marvel-api-ten.vercel.app/static/img/2021/Anniversary-Royal-Hair-Coupon.png``.
 
 # Dev
-With nodemon, running on ``http://localhost:3000``:
+In a local setup with nodemon, running on ``http://localhost:3000``:
 ```
 npm i
 npm start
