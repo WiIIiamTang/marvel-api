@@ -16,7 +16,7 @@ The api serving content for [marvel machine sim](https://github.com/Aearsears/ma
 ### Double (Marvel)
 
 # Dev
-``npm install --development``
+``npm i`` or ``npm i --production``
 - Set a ``.env`` for the MongoDB URI (variable ``URI``).
 
 # Deployment
