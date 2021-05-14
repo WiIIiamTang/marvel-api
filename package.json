@@ -1,0 +1,21 @@
+{
+  "name": "marvel-api",
+  "version": "1.0.0",
+  "description": "api for marvel-machine-sim",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "William Tang",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^9.0.2",
+    "express": "^4.17.1",
+    "mongodb": "^3.6.6"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
