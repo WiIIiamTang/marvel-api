@@ -7,7 +7,7 @@ The api serving content for [marvel machine sim](https://github.com/Aearsears/ma
 ## Base URL
 ``https://marvel-api-ten.vercel.app/api/``
 
-All static files are at ``https://marvel-api-ten.vercel.app/static/`` (See **Accessing static files**).
+All static files are at ``https://marvel-api-ten.vercel.app/static/`` (See [Accessing-static-files](#accessing-static-files)).
 
 ## Endpoints
 
