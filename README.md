@@ -63,6 +63,14 @@ URI=<MONGODB-URI>
 ```
 - Note that the URI should include the username and password as well. Database names can be changed here or in the code.
 
+### With Docker
+``docker build . marvel-api-dev``
+The ``.env`` should be in the root folder already (or if not, the URI/username/password should already be in the ``mongoc.js`` file).
+
+``docker run 3000:3000 -d marvel-api-dev``
+
+The app will be running at ``http://localhost:3000``.
+
 # Deployment
 This project is hosted on [vercel](https://vercel.com/home).
 
