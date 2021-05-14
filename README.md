@@ -72,7 +72,7 @@ The ``.env`` should be in the root folder already (or if not, the URI/username/p
 
 ``docker run 3000:3000 -d marvel-api-dev``
 
-The app will be running at ``http://localhost:3000``.
+The app will be running at ``http://localhost:3000``. There is no compose file to create the MongoDB service along with the node app yet, so you will either have to build and run it yourself once this container is running, or connect to a non-local database (like MongoDB Atlas).
 
 # Deployment
 This project is hosted on [vercel](https://vercel.com/home).
