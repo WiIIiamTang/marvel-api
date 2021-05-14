@@ -15,6 +15,9 @@ mongo.connector((err, client) => {
     const itemRoute = require('./routes/items.js');
     const doubleRoute = require('./routes/double.js');
 
+    /**
+     * Modules that use the db MUST be declared here, otherwise it may be undefined
+     */
     api.use(express.json());
     api.use('/api', categoryRoute);
     api.use('/api', itemRoute);
@@ -22,6 +25,7 @@ mongo.connector((err, client) => {
     api.use('/static', express.static(path.join(__dirname + '/public')));
 
     api.listen(port, () => {
+        // local test
         console.log(`Listening on http://localhost:${port}`);    
     });
 });
