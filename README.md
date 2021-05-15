@@ -7,7 +7,7 @@ The api serving content for [marvel machine sim](https://github.com/Aearsears/ma
 ## Base URL
 ``https://marvel-api-ten.vercel.app/api/``
 
-All static files are at ``https://marvel-api-ten.vercel.app/static/`` (See **Accessing static files**).
+All static files are at ``https://marvel-api-ten.vercel.app/static/`` (See [Accessing-static-files](#accessing-static-files)).
 
 ## Endpoints
 
@@ -59,7 +59,7 @@ Gives information on the rates for double marvel on each wheel.
 If an item has a path of ``"static/img/2021/Anniversary-Royal-Hair-Coupon.png"``, for example, the image file can be accessed at ``https://marvel-api-ten.vercel.app/static/img/2021/Anniversary-Royal-Hair-Coupon.png``.
 
 # Dev
-With nodemon, running on ``http://localhost:3000``:
+In a local setup with nodemon, running on ``http://localhost:3000``:
 ```
 npm i
 npm start
@@ -75,6 +75,17 @@ URI=<MONGODB-URI>
 ## Authentication
 
 [Reserved]
+
+### With Docker
+``docker build . marvel-api-dev``
+
+
+The ``.env`` should be in the root folder already (or if not, the URI/username/password should already be in the ``mongoc.js`` file).
+
+
+``docker run 3000:3000 -d marvel-api-dev``
+
+The app will be running at ``http://localhost:3000``. There is no compose file to create the MongoDB service along with the node app yet, so you will either have to build and run it yourself once this container is running, or connect to a non-local database (like MongoDB Atlas).
 
 # Deployment
 This project is hosted on [vercel](https://vercel.com/home).
