@@ -1,5 +1,7 @@
 const express = require('express');
 const path = require('path');
+const fs = require('fs');
+const marked = require('marked');
 const api = express();
 const port = process.env.PORT || 3000;
 var mongo = require('./util/mongoc');
@@ -24,6 +26,10 @@ mongo.connector((err, client) => {
     api.use('/api', itemRoute);
     api.use('/api', doubleRoute);
     api.use('/static', express.static(path.join(__dirname + '/public')));
+    api.use('/', (req, res) => {
+        var file = fs.readFileSync('./README.md', 'utf8');
+        res.send(marked(file.toString()));
+    });
 
     api.listen(port, () => {
         // local test

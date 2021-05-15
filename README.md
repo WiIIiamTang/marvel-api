@@ -23,8 +23,15 @@ Represents an item.
 | wheel     | String | The wheel the item is belongs to |
 | item_id   | Number | A unique identifier for the item |
 
+
 - GET ``/items/`` : Gets all items
-- GET ``/items/:id``: Gets the item with the specified id. Nothing is returned if no item is found
+- GET ``/items/:id(\d+)``: Gets the item with the specified **id** param. An empty array is returned if no item is found. The id must be a number.
+- GET ``/items/mid``: Gets all items from the mid wheel.
+- GET ``/items/left``: Gets all items from the left wheel.
+- GET ``/items/right``: Gets all items from the right wheel.
+- GET ``/items/category/:cat``: Gets all items with the specified **cat** param. An empty array is returned if no item is found.
+- GET ``/items/rate/:min-:max``: Gets all items within the specified range of rates given by [**min**, **max**]. An empty array is returned if no item is found.
+
 
 ### Categories
 Gives information on the categories available on a wheel.
@@ -58,10 +65,16 @@ npm i
 npm start
 ```
 - Set a ``.env`` for the MongoDB URI (variable ``URI``) in the root folder.
+
 ```
 URI=<MONGODB-URI>
 ```
+
 - Note that the URI should include the username and password as well. Database names can be changed here or in the code.
+
+## Authentication
+
+[Reserved]
 
 # Deployment
 This project is hosted on [vercel](https://vercel.com/home).
