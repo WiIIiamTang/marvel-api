@@ -24,6 +24,8 @@ Represents an item.
 | item_id   | Number | A unique identifier for the item |
 
 
+Optional query parameters: ``id``, ``mid``, ``left``, ``right``, ``/category/cat``, ``/rate/min-max``.
+
 - GET ``/items/`` : Gets all items
 - GET ``/items/:id(\d+)``: Gets the item with the specified **id** param. An empty array is returned if no item is found. The id must be a number.
 - GET ``/items/mid``: Gets all items from the mid wheel.
