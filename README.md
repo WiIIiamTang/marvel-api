@@ -91,7 +91,7 @@ The ``.env`` should be in the root folder already (or if not, the URI/username/p
 The app will be running at ``http://localhost:3000``. There is no compose file to create the MongoDB service along with the node app yet, so you will either have to build and run it yourself once this container is running, or connect to a non-local database (like MongoDB Atlas).
 
 # Deployment
-The frontend is being served on Github pages, which only allows static content, so this project is hosted on [vercel](https://vercel.com/home). The ``vercel.json`` needs to be configured properly. There have been issues with not including the ``node_modules`` folder in the repo, so the folder is kept here for deployment reasons.
+The frontend is being served on Github pages, which only allows static content, so this project repo is linked to and hosted on [vercel](https://vercel.com/home). The ``vercel.json`` needs to be configured properly. There have been issues with not including the ``node_modules`` folder in the repo, so the folder is kept here for deployment reasons.
 
 # Data
 All images are property of Nexon. See [marvel machine sim](https://github.com/Aearsears/marvel_machine_sim).
