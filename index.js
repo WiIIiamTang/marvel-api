@@ -27,7 +27,7 @@ mongo.connector((err, client) => {
     api.use('/api', doubleRoute);
     api.use('/static', express.static(path.join(__dirname + '/public')));
     api.use('/', (req, res) => {
-        res.sendFile(path.join(__dirname, '/index.html'));
+        res.sendFile('/static/index.html');
         //var file = fs.readFileSync(path.join(__dirname, '/README-site.md'), 'utf8');
         //res.send(marked(file.toString()));
     });
