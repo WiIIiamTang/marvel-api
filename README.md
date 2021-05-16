@@ -42,7 +42,7 @@ Gives information on the categories available on a wheel.
 | attribute | type   | description                      |
 |-----------|--------|----------------------------------|
 | wheel     | String | The wheel                        |
-| **Category** | Number | The rate for **Category** within that wheel |
+| {**Category**} | Number | The rate for {**Category**} within that wheel |
 
 Current **Categories**: Android, Equipment, Familiar, Scroll, Use, Cosmetic, Maple_Points, Chair, Storage, Soul
 
