@@ -75,10 +75,6 @@ URI=<MONGODB-URI>
 
 - Note that the URI should include the username and password as well. Database names can be changed here or in the code.
 
-### Authentication
-
-[Reserved]
-
 ### With Docker
 ``docker build . marvel-api-dev``
 
