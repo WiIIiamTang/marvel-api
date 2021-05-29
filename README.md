@@ -1,6 +1,6 @@
 # marvel-machine-sim-api
 
-The api serving content for [marvel machine sim](https://github.com/Aearsears/marvel_machine_sim). Built on nodejs, Express and MongoDB.
+An api serving content for marvel machine gacha results. Data based on [marvel machine sim](https://github.com/Aearsears/marvel_machine_sim). Built on nodejs, Express and MongoDB.
 
 # Reference
 
